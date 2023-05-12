@@ -1,3 +1,3 @@
 ## Catch the Moon
 
-[Play](https://andreibakhtinov.github.io/ClickGame/)
+[Play](https://ikar-zindo.github.io/CatchTheMoon/)
