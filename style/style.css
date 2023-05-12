@@ -1,0 +1,128 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: rgb(30, 45, 60); /* Фон */
+   color: rgb(243, 156, 18); /*Цвет текста*/
+}
+
+h1 {
+   color: rgb(22, 160, 133);
+   text-align: center;
+   font-size: 32px;
+   margin: 8px;
+}
+
+h2 {
+   color: rgb(225, 55, 55);
+   text-align: center;
+   margin: 8px;
+}
+
+.score {
+   font-size: 26px;
+   margin: 0 25px;
+}
+
+#count_score {
+   color: rgb(225, 55, 55);
+}
+
+header {
+   width: 70%;
+   margin: auto;
+   height: 45px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.las {
+   font-size: 26px;
+   color: rgb(231, 76, 60);
+}
+
+.btm {
+   margin: 0 25px;
+   padding: 8px 28px;
+   font-weight: 600;
+   color: rgb(22, 160, 133);
+   font-size: 20px;
+   background-color: rgb(37, 101, 88);
+   border: 0 solid rgb(243, 156, 18);
+   border-radius: 12px;
+}
+
+.btm:hover {
+   box-shadow: 0px 0px 12px 4px rgb(243, 156, 18);
+   color: rgb(243, 156, 18);
+}
+
+.btm:active {
+   box-shadow: 0px 0px 12px 4px rgb(103, 72, 22);
+   color: rgb(103, 72, 22);
+}
+
+.area {
+   width: 500px;
+   aspect-ratio: 1;
+   margin: 20px auto;
+   background-image: url(../img/night-starry-sky.jpg);
+   box-shadow: 0px 0px 10px 10px rgb(243, 156, 18);
+   overflow: hidden;
+   /* display: none; */
+
+}
+
+#object {
+   width: 100px;
+   aspect-ratio: 1;
+   border-radius: 50%;
+   background-image: url(../img/moon.png);
+   background-size: 100px 100px;
+   transform: translateY(-100px);
+   position: relative;
+}
+
+#object:hover {
+   box-shadow: 0px 0px 4px 4px rgb(243, 156, 18);
+}
+
+#object.start {
+   animation-name: movement;
+   animation-duration: 2s; /*  плавное анимация */
+   animation-iteration-count: infinite; /* бесклнечная анимация */
+   animation-timing-function: linear; /*  плавное анимация */
+}
+
+.area.finish {
+   background-image: none;
+}
+
+/* анимация движения */
+@keyframes movement {
+   to {
+      transform: translateY(600px);
+      width: 80px;
+      background-size: 80px 80px;
+   }
+}
+
+
+/* Game Over */
+
+.game-over {
+	display: none;
+	padding: 20px 30px;
+	border-radius: 12px;
+	background-color: rgba(60, 99, 130, .8);
+	box-shadow: 0px 0px 2px 2px rgb(243, 156, 18);
+}
+
+.game-over-text {
+   text-align: center;
+	color: rgb(243, 156, 18);
+}
