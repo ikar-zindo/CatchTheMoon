@@ -8,7 +8,7 @@ let life = 3; // жизни
 let object = document.querySelector("#object"); // Ищем объект Луна
 const hit_sound = new Audio("sounds/hit.wav"); // Звук
 const miss_sound = new Audio("sounds/miss.wav"); // Звук
-const game_level_music = new Audio("sounds/level-music.wav"); // Звук
+// const game_level_music = new Audio("sounds/level-music/level-music.wav"); // Звук
 
 // Зацикливаем мелодию уровня
 setInterval(function () {
@@ -25,8 +25,7 @@ function start_game() {
    life = 3; // обнуление жизней
    count_score.innerText = `0`;
    count_life.innerText = `3`;
-   game_level_music.currentTime = 0;
-   game_level_music.play(); // Звук
+   playRandomTrack();// Звук
 }
 
 function hit() {
@@ -78,6 +77,53 @@ function finish_game() {
    // count_score.innerText = `0`;
    count_life.innerText = `3`;
    gameOver.style.display = "block";
+}
 
-   game_level_music.pause(); // Звук
+// Рандомный трэк
+var audio = null; // Глобальная переменная для отслеживания текущего воспроизведения
+
+function playRandomTrack() {
+   const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+   const folderPath = "/sounds/level-music"; // Замените на путь к вашей папке с треками
+   const tracks = [
+      "level-music.wav",
+      "mixkit-cat-walk.mp3",
+      "mixkit-cbpd.mp3",
+      "mixkit-driving-ambition.mp3",
+      "mixkit-hip-hop.mp3",
+      "mixkit-sleepy-cat.mp3",
+      "mixkit-sun-and-his-daughter.mp3"
+   ]; // Замените на реальные имена ваших треков
+
+   // Генерируем случайный индекс трека
+   const randomIndex = Math.floor(Math.random() * tracks.length);
+   const randomTrack = tracks[randomIndex];
+   const trackUrl = folderPath + "/" + randomTrack;
+
+   // Создаем XMLHttpRequest для загрузки трека
+   const request = new XMLHttpRequest();
+   request.open("GET", trackUrl, true);
+   request.responseType = "arraybuffer";
+
+   // Обработка успешной загрузки трека
+   request.onload = function () {
+      audioContext.decodeAudioData(request.response, function (buffer) {
+         // Прекращаем воспроизведение предыдущего трека, если он есть
+         if (audio !== null) {
+            audio.stop();
+         }
+
+         const source = audioContext.createBufferSource();
+         source.buffer = buffer;
+         source.connect(audioContext.destination);
+         source.start(0);
+
+         // Сохраняем текущий трек для последующего прекращения воспроизведения
+         audio = source;
+      });
+   };
+
+   // Отправляем запрос на загрузку трека
+   request.send();
 }
