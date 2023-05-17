@@ -77,6 +77,7 @@ function finish_game() {
    // count_score.innerText = `0`;
    count_life.innerText = `3`;
    gameOver.style.display = "block";
+   audio.stop();
 }
 
 // Рандомный трэк
@@ -88,12 +89,12 @@ function playRandomTrack() {
    const folderPath = "./sounds/level-music"; // Замените на путь к вашей папке с треками
    const tracks = [
       "level-music.wav",
-      "mixkit-cat-walk.mp3",
-      "mixkit-cbpd.mp3",
-      "mixkit-driving-ambition.mp3",
-      "mixkit-hip-hop.mp3",
-      "mixkit-sleepy-cat.mp3",
-      "mixkit-sun-and-his-daughter.mp3"
+      "mixkit-cat-walk.wav",
+      "mixkit-cbpd.wav",
+      "mixkit-driving-ambition.wav",
+      "mixkit-hip-hop.wav",
+      "mixkit-sleepy-cat.wav",
+      "mixkit-sun-and-his-daughter.wav"
    ]; // Замените на реальные имена ваших треков
 
    // Генерируем случайный индекс трека
