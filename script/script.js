@@ -85,7 +85,7 @@ var audio = null; // Глобальная переменная для отсле
 function playRandomTrack() {
    const audioContext = new (window.AudioContext ||
       window.webkitAudioContext)();
-   const folderPath = "/sounds/level-music"; // Замените на путь к вашей папке с треками
+   const folderPath = "../sounds/level-music"; // Замените на путь к вашей папке с треками
    const tracks = [
       "level-music.wav",
       "mixkit-cat-walk.mp3",
