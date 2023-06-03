@@ -103,7 +103,7 @@ header {
    animation-name: movement;
    animation-duration: 2s; /*  плавное анимация */
    animation-iteration-count: infinite; /* бесклнечная анимация */
-   animation-timing-function: linear; /*  плавное анимация */
+   animation-timing-function: linear;  /* плавное анимация */
 }
 
 /* анимация движения */
