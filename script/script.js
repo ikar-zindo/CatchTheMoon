@@ -54,7 +54,7 @@ function random_offset() { // Случайное появление Луны
    object.style.left = `${random_offset}px`;
 }
 
-// Падение Луны вниз
+// TODO Падение Луны вниз
 // function fall_down() {
 
 // }
