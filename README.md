@@ -1,5 +1,5 @@
-## Catch the Moon
+### Game-clicker «Catch the Moon»
 
-## New realese
+# [Play](https://ikar-zindo.github.io/CatchTheMoon/)
 
-[Play](https://ikar-zindo.github.io/CatchTheMoon/)
+### New realese v0.2.0
