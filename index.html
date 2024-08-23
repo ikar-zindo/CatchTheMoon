@@ -13,13 +13,13 @@
 
    <div id="playground">
       <header>
-         <button class="btm" onmousedown="start_game()">Start</button>
+         <button class="btm">Start</button>
          <p class="hearts"><span id="count_life">3</span> <i class="las la-heart"></i></p>
          <h4 class="score">Score: <span id="count_score">0</span></h4>
       </header>
 
-      <div  class="area" id="area" onmousedown="miss(event)">
-         <div id="object" onmousedown="hit()"></div>
+      <div class="area" id="area">
+         <div id="moon"></div>
          
          <!-- Уведомление GameOver -->
          <div class="wrapper-game-over" id="wrapper-game-over">
@@ -29,7 +29,7 @@
          </div>
       </div>
    </div>
-   
-   <script src="./script/script.js"></script>
+
+   <script type="module" src="script/game.js"></script>
 </body>
 </html>
